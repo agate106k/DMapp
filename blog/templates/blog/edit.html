@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="/static/edit.css">
+<script src="/static/edit.js"></script>
+
+
+<title>入力画面</title>
+
+<form action="/blog/diarysave" method="post" enctype="multipart/form-data">
+
+    <div id="main">
+        <label class="label">タイトル</label>
+        <input id="text1" type="text" name="title">
+        <br><br>
+        <div id=image_box>
+            <label class="btn1" for="file-sample">ファイルを選択</label>
+            <input id="file-sample" type="file" name="image">
+            <img id="file-preview">
+        </div>
+        <label class="label">コメント</label>
+        <textarea rows="12" cols="100" name="comment"></textarea>
+        <div class="time"></div>
+        <input class="btn1" type="submit" value="  登  録  ">
+    </div>
+
+</form>
+
+{% endblock %}

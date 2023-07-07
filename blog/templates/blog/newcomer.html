@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="/static/newcomer.css">
+<script src="/static/newcomer.js"></script>
+
+<title>新規登録画面</title>
+
+<div class="frame">
+    <img src="/static/image.jpg">
+    <h2>アカウントを作成</h2>
+    {% if status == "exist_user" %}
+    <p>そのユーザーは既に登録されています。</p>
+    {% elif status == None %}
+    <p>ユーザ名を入力してください。</p>
+    {% endif %}
+    <form action="/blog/registar" method="post">
+        <div class="box1">
+            <label for="text1" id="l_text1">名前</label>
+            <input id="text1" type="text" name="user_name" placeholder="user name">
+        </div>
+        <div class="box1">
+            <label for="text2" id="l_text2">パスワード</label>
+            <input id="text2" type="password" name="password" placeholder="password">
+        </div>
+        <p>
+            アカウントを作成すると、利用規約、およびCookieの使用を含むプライバシーポリシーに同意したことになります。
+        </p>
+        <button class="btn1" type="submit">登録する</button>
+    </form>
+    <p>
+      <br>
+      <a href="/blog/top">ログイン画面に戻る</a>
+    </p>
+</div>
